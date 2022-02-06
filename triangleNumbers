@@ -1,0 +1,14 @@
+public class triangleNumbers{
+    public static void main(String[] args){
+
+        //Global variables
+        int num0 = 0; //0th triangle number is 0
+        int n = 10; //program runs up to the nth triangle number
+        
+        //Body of functionality
+        for(int i = 0; i<n; i++){
+            num0 += i+1; //Adding the next triangle row
+            System.out.println(num0); //Outputting the number
+        }
+    }
+}
