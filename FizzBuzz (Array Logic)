@@ -1,0 +1,30 @@
+public class FizzBuzz{
+    public static void main(String[] args){
+        //Initializing
+        int k = 1000; //End value
+        int l = 0; //Starting value
+        String output; //Outputting the result of each iteration
+
+        //Substitutions
+        String[] words = {"Fizz","Buzz","Fuzz"};
+        int[] numbers = {3,5,7};
+
+        //Main loop
+        for(int i = l; i<k;i++){
+            output = "";
+
+            //Need to do a substitution?
+            for(int j = 0; j<numbers.length; j++){
+                if(i%numbers[j] == 0){
+                    output+=words[j];
+                }
+            }
+
+        //If none of the substitutions apply
+        if(output.equals("")){
+            output+= i;
+        }
+        System.out.println(output);
+        }
+    }
+}
