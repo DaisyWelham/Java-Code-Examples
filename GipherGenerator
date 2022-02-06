@@ -1,0 +1,30 @@
+//Generates a cipher to replace each character in "characters" with an l-length code
+
+import java.lang.Math;
+public class CipherGenerator {
+    public static void main(String[] args) {
+        
+        //Every character allowed by the cipher
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !£$%^&*()_-+=";
+
+        //Cipher element length
+        int l = 5;
+
+        //Outputting the cipher as an array
+        System.out.print("{");
+        for (int k = 0; k<characters.length(); k++){
+            String output = "\"";
+            for (int i = 0; i < l; i++) {
+                int A = (int) Math.round((characters.length()-1)*Math.random());
+                int B = A + 1;
+                output+=characters.substring(A,B);
+            } 
+            output+="\"";
+            System.out.print(output);
+            if(k!=characters.length()-1){
+                System.out.print(",");
+            }
+        }
+        System.out.print("}");
+    }
+}
