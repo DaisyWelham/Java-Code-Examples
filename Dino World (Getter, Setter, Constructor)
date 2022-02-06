@@ -1,0 +1,87 @@
+public class dinosaur{
+
+    //Constructor
+    String name;
+    String era;
+    int origin;
+    int age;
+    String Dclass;
+
+    public dinosaur(String name, String era, int origin, int age, String Dclass){
+        this.name = name;
+        this.origin = origin;
+        this.age = age;
+        this.era = era;
+        this.Dclass = Dclass;
+    }
+     
+    //Setters
+    public void setName(String newName){
+        this.name = newName;
+    }
+
+    public void setAge(int newAge){
+        this.age = newAge;
+    }
+
+    public void setEra(String newEra){
+        this.era = newEra;
+    }
+
+    public void setDclass(String newDclass){
+        this.Dclass = newDclass;
+    }
+
+    public void setOrigin(int newOrigin){
+        this.origin = newOrigin;
+    }
+
+    //Getters
+    public String getName(){
+        return this.name;
+    }
+
+    public int getAge(){
+        return this.age;
+    }
+
+    public String getEra(){
+        return this.era;
+    }
+
+    public String getDclass(){
+        return this.Dclass;
+    }
+
+    public int getOrigin(){
+        return this.origin;
+    }
+}
+
+import java.util.ArrayList;
+
+public class dinoworld{
+    public static void main(String[] args){
+    ArrayList<dinosaur> dinoList = new ArrayList<dinosaur>();
+
+    //Adding dinos
+    dinosaur tRex = new dinosaur("Tyrannosaurus Rex","Late Cretaceous",68,66,"Ornithischia");
+    dinoList.add(tRex);
+
+    dinosaur velo = new dinosaur("Velociraptor","Late Cretaceous",75,71,"Ornithischia");
+    dinoList.add(velo);
+
+    dinosaur stego = new dinosaur("Stegosaurus","Late Jurassic",155,145,"Saurischia");
+    dinoList.add(stego);
+
+    dinosaur brachi = new dinosaur("Brachiosaurus","Late Jurassic",154,150,"Saurischia");
+    dinoList.add(brachi);
+
+    dinosaur coelo = new dinosaur("Coelophysis","Late Triassic",221,196,"Ornithischia");
+    dinoList.add(coelo);
+
+    for(dinosaur dino : dinoList){
+        System.out.println("Name: " + dino.getName() + ". Era: " + dino.getEra() + " (" + dino.getOrigin() + "-" + dino.getAge() + "mya). Class: " + dino.getDclass() + ".");
+    }
+    }
+}
