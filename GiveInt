@@ -1,0 +1,10 @@
+//The user must input an integer
+static int GiveInt(String prompt) 
+{
+        System.out.println(prompt); 
+        while(!in.hasNextInt()){          
+            in.next(); 
+            }
+        int out0 = in.nextInt();
+        return(out0);
+}
