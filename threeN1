@@ -1,0 +1,30 @@
+//Checking the "3n+1" problem- the hypothesis that every integer reaches 1 if it follows this algorithm:
+//If even, half it.
+//If odd, multiply by 3 and add 1.
+//The program shows that this holds for every integer which can be represented without invoking BigInteger
+public class threeN1{
+    public static void main(String[] args){
+        int i = 0;
+        while(true){
+
+            //Which number are we investigating?
+            i++;
+            System.out.println("Testing " + i + ":");
+            int j = i;
+
+            while(j!=1){ //Exit condition
+
+                //System.out.print(j + "->");
+                //Is j even?
+                if(j%2==0){
+                    j = j/2;
+                }
+
+                //If j is odd?
+                else{
+                    j = 3*j + 1;
+                }
+            }
+        }
+    }
+}
