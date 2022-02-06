@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class animalType{
+    public static void main(String[] args){
+        //importing the scanner
+        Scanner in = new Scanner(System.in);
+
+        //Animals arrays
+        String[] mammals = {"dog","cat","monkey","human","giraffe","horse","lion"};
+        String[] reptiles = {"slow worm","tyrannosaurus","snake","gecko","triceratops"};
+        String[] birds = {"ostrich","eagle","chicken","parrot","emu","falcon","duck"};
+
+        //User input
+        System.out.println("Which animal would you like to know about?");
+        String userInput = in.nextLine();
+
+        //Main body of logic
+        boolean answered = false; //Used to check the user has been given an answer
+
+        //Is it a mammal?
+        for(String a: mammals){
+            if(userInput.equalsIgnoreCase(a)){
+                System.out.println("A " + a + " is a mammal.");
+                answered = true;
+            }
+        }
+
+        //Is it a reptile?
+        for(String a: reptiles){
+            if(userInput.equalsIgnoreCase(a)){
+                System.out.println("A " + a + " is a reptile.");
+                answered = true;
+            }
+        }
+
+        //Is it a bird?
+        for(String a: birds){
+            if(userInput.equalsIgnoreCase(a)){
+                System.out.println("A " + a + " is a bird.");
+                answered = true;
+            }
+        }
+
+        //Did the user get an answer?
+        if(!answered){
+            System.out.println("Apologies, I'm not familiar with that animal");
+        }
+    }
+}
