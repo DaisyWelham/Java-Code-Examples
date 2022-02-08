@@ -1,0 +1,17 @@
+public class derivativeApproximator{
+
+    //The function whose derivative is being approximated
+    public static double f(double x){
+        return(x*x - 5);
+    }
+
+    //The function which approximates the derivative of f(x) at x
+    public static double derivative_f_approx(double x){
+        double dx = x/1000 + 0.00001;
+        return((f(x+dx) - f(x))/dx);
+    }
+
+    public static void main(String[] args){
+        System.out.println("Result: " + derivative_f_approx(10));
+    }
+}
