@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class PalindromeTester{
+    public static void isPalindrome(String inputWord){
+        if(inputWord.length() <2){
+            System.out.println("It is a palindrome.");
+        }
+        else if(inputWord.substring(inputWord.length()-1,inputWord.length()).equals(inputWord.substring(0,1))){
+            inputWord = inputWord.substring(1,inputWord.length()-1);
+            isPalindrome(inputWord);
+        }
+        else{
+            System.out.println("It is not a palindrome.");
+        }
+    }
+
+
+    public static void main(String[] args){
+        //Import
+        Scanner in = new Scanner(System.in);
+
+        //Prompt
+        System.out.println("Which word are you testing?");
+
+        //Parameters
+        String testWord = in.nextLine(); //The word being checked
+        isPalindrome(testWord);
+    }
+}
