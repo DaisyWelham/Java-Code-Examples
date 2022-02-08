@@ -1,0 +1,25 @@
+import java.util.Math;
+public class stochasticGradientDescent{
+    //The objective function to be minimized
+    public static double f(double x){
+        return(x*x*x - 2*x*x + 3);
+    }
+    
+    //The derivative of the objective function
+    public static double derivative_f(double x){
+        return(3*x*x - 4*x);
+    }
+
+    public static void main(String[] args){
+        //Input parameters
+        double x_start = 10; //The first guess of x
+        double step_size = 0.01; //Used to trade off exploration vs exploitation
+        int nIterations = 10000; //The number of iterations of stochastic gradient descent
+
+        double x = x_start;
+        for(int i = 0; i<nIterations;i++){
+            x = x - step_size*Math.random()*derivative_f(x);
+        }
+        System.out.println("After "+nIterations + " iterations, stochastic gradient descent found a minimum at x=" + x);
+    }
+}
