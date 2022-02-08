@@ -1,0 +1,24 @@
+public class rectangleRule{
+
+    //The function to be integrated
+    public static double f(double x){
+        return(2*x);
+    }
+
+    public static void main(String[] args){
+        //Input parameters
+        double lowN = 0; //The lower limit of the integral
+        double highN = 3; //The upper limit of the integral
+        int nRectangles = 1000; //The number of rectangles to be used
+
+        //Parameters which the program works out
+        double width = (highN-lowN)/nRectangles; //The width of each rectangle
+        double area = 0;
+        double x = lowN;
+        for(int i = 0; i<nRectangles;i++){
+            area+= width*f(x);
+            x+=width;
+        }
+        System.out.println("The result is: "+area);
+    }
+}
