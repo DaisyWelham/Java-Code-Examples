@@ -1,0 +1,24 @@
+public class trapeziumRule{
+
+    //The function to be integrated
+    public static double f(double x){
+        return(2*x);
+    }
+
+    public static void main(String[] args){
+        //Input parameters
+        double lowN = 0; //The lower limit of the integral
+        double highN = 3; //The upper limit of the integral
+        int nTrapeziums = 100000; //The number of trapeziums to be used
+
+        //Parameters which the program works out
+        double width = (highN-lowN)/nTrapeziums; //The width of each trapezium
+        double area = 0;
+        double x = lowN;
+        for(int i = 0; i<nTrapeziums;i++){
+            area+= width*(f(x)+f(x+width))/2;
+            x+=width;
+        }
+        System.out.println("The result is: "+area);
+    }
+}
